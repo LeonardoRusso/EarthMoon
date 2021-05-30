@@ -1,0 +1,161 @@
+:root {
+  --border: 2px solid red;
+}
+
+html {
+  height: 100vh;
+  font-size: 62.5%;
+  background: black;
+  /* animation-name: dayNight; */
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in;
+}
+
+body {
+  width: auto;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  font-family: "Pompiere", cursive;
+  font-size: 40px;
+  color: black;
+}
+
+.menu {
+  width: auto;
+  height: 80px;
+  background: black;
+}
+
+.grid {
+  display: grid;
+  /* width: auto; */
+  grid-template:
+    "a b"
+    "c d";
+  height: 25%;
+  text-align: center;
+  vertical-align: middle;
+  /* grid-gap: 1rem; */
+  filter: saturate(0);
+}
+
+@keyframes moving {
+  0% {
+    width: 5vh;
+    height: 5vh;
+    filter: opacity(1);
+    top: 10px;
+    right: 150px;
+  }
+  25% {
+    width: 15vh;
+    height: 15vh;
+    top: 30px;
+  }
+  50% {
+    width: 10vh;
+    height: 10vh;
+    top: 10px;
+    right: -150px;
+    filter: opacity(1);
+  }
+  75% {
+    width: 1vh;
+    height: 1vh;
+    filter: opacity(0);
+    top: -10px;
+    /* z-index: inherit; */
+  }
+  100% {
+    width: 5vh;
+    height: 5vh;
+    filter: opacity(0.8);
+    top: 10px;
+    right: 150px;
+    z-index: inherit;
+  }
+}
+@keyframes dayNight {
+  0% {
+    background: white;
+  }
+  40% {
+    background: black;
+  }
+  60% {
+    background: white;
+  }
+  75% {
+    background: white;
+  }
+  100% {
+    background: white;
+  }
+}
+
+.earth {
+  z-index: 1;
+  position: absolute;
+  width: 30vh;
+  height: 30vh;
+  background: dodgerblue;
+  border-radius: 50%;
+  align-self: center;
+}
+.moon {
+  border: 1px solid black;
+  z-index: 2;
+  position: relative;
+  top: 10px;
+  right: 80px;
+  width: 10vh;
+  height: 10vh;
+  background: grey;
+  border-radius: 50%;
+  align-self: center;
+  animation-name: moving;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.box1 {
+  grid-area: a;
+  width: auto;
+  height: 50vh;
+  background: red;
+}
+.box1:hover {
+}
+
+.box2 {
+  grid-area: b;
+  width: auto;
+  height: 50vh;
+  background: blue;
+}
+.box2:hover {
+}
+
+.box3 {
+  grid-area: c;
+  width: auto;
+  height: 50vh;
+  background: yellow;
+}
+.box3:hover {
+}
+
+.box4 {
+  grid-area: d;
+  width: auto;
+  height: 50vh;
+  background: green;
+}
+.box4:hover {
+}
